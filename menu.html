@@ -5,13 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Principal</title>
-    <link rel="stylesheet" href="estilosPOA.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('jack-b-8Wqm1W59Baw-unsplash.jpg') no-repeat center center/cover;
+            position: relative;
+        }
 
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .menu-container {
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .menu-container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .menu-container p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .menu-container button {
+            background: linear-gradient(to right, #0066ff, #00c3ff);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-container button:hover {
+            background: linear-gradient(to right, #0052cc, #00aaff);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="menu-container">
+        <h1>Bienvenido</h1>
+        <p>Hola, <span id="nombreUsuario">Nombre del Usuario</span> 👋</p>
+
         <button type="button" onclick="window.location.href = 'panelOficialesAdmin.html'">
             Mantenimiento de Oficiales
         </button>
@@ -20,6 +87,11 @@
         </button>
     </div>
 
+    <script>
+        // Aquí podrías cargar el nombre del usuario cuando tengas la BD conectada
+        // Por ejemplo:
+        // document.getElementById("nombreUsuario").textContent = "Carlos Ramírez";
+    </script>
 </body>
 
 </html>
