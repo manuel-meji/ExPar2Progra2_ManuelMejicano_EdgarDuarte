@@ -1,0 +1,214 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente y fondo global */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #0056d2;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+}
+.navbar nav li + li {
+  margin-left: 1.5rem;
+}
+.navbar a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-weight: 500;
+}
+.navbar li.active a,
+.navbar a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Contenedor general */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* Título de la página */
+.page-title {
+  margin-bottom: 1.5rem;
+  color: #0056d2;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* Layout principal */
+.main-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Sección del formulario */
+.form-section {
+  flex: 1 1 100%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Agrupación inline de campos */
+.form-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+/* Grupos de entrada */
+.search-group,
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.search-group label,
+.form-group label {
+  margin-right: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  white-space: nowrap;
+}
+.search-group input,
+.form-group select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+.search-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0056d2;
+  box-shadow: 0 0 0 2px rgba(0,86,210,0.1);
+}
+
+/* Botón de búsqueda */
+.search-button {
+  margin-left: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #0056d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.search-button:hover {
+  background: #0041a8;
+}
+
+/* Grupo de acciones (botones) */
+.actions-inline {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Botón Aprobar */
+.approve-button {
+  background-color: #2cae2c;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.approve-button:hover {
+  background-color: #249f24;
+}
+
+/* Botón Eliminar */
+.delete-button {
+  background-color: #c1121f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.delete-button:hover {
+  background-color: #9b0d18;
+}
+
+/* Sección de tabla */
+.table-section {
+  flex: 1 1 100%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+thead {
+  background: #f0f0f0;
+}
+th, td {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+tbody tr:hover {
+  background: #f9f9f9;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-group,
+  .form-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .actions-inline {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}

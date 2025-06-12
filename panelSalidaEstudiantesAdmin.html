@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Salida de Estudiantes • Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilosPSEO.css">
+</head>
+<body>
+
+  <!-- Navbar superior -->
+  <header class="navbar">
+    <h1 class="logo">Administración</h1>
+    <nav>
+      <ul>
+        <li class="active"><a href="#">Salida de Estudiantes</a></li>
+        <li><a href="funcionarios.html">Funcionarios</a></li>
+        <li><a href="ingresoFuncionario.html">Ingreso Funcionario</a></li>
+        <li><a href="ingresoExterno.html">Ingreso Externo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Registra las salidas de los estudiantes del Colegio Técnico Profesional de Upala</h2>
+    <div class="main-content">
+
+      <!-- Formulario de búsqueda y aprobación -->
+      <section class="form-section">
+        <div class="form-inline">
+          <div class="search-group">
+            <label for="buscarEstudiante">Buscar estudiante:</label>
+            <input type="text" id="buscarEstudiante" placeholder="Nombre o ID…">
+            <button class="search-button" type="button">🔍Buscar</button>
+          </div>
+          <div class="form-group">
+            <label for="selectEstudiante">Seleccione el estudiante:</label>
+            <select id="selectEstudiante">
+              <option value="">-- vacio --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="motivoSalida">Motivo de salida:</label>
+            <select id="motivoSalida">
+              <option value="">-- seleccione --</option>
+              <option>Salida por cita médica o dental</option>
+              <option>Salida por problemas de salud</option>
+              <option>Salida por llamado de padres o encargados</option>
+              <option>Fallecimiento de familiar o allegado</option>
+              <option>Salida de almuerzo</option>
+              <option>Salida por tarde libre</option>
+              <option>Salida por ausencia de profesor</option>
+              <option>Salida por otro motivo</option>
+            </select>
+          </div>
+          <div class="actions-inline">
+            <button class="approve-button" type="button">✅ Aprobar salida</button>
+            <button class="delete-button" type="button">🗑️ Eliminar Salida</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabla de salidas -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Salida</th>
+              <th>Nombre Estudiante</th>
+              <th>ID</th>
+              <th>Motivo de salida</th>
+              <th>Fecha de salida</th>
+              <th>Hora de salida</th>
+              <th>Nombre de oficial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- registros cargados dinámicamente -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 EduAdmin • Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
