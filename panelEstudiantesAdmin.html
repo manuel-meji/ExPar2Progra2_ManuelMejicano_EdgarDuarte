@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Estudiantes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Estudiantes • Admin</title>
+  <link rel="stylesheet" href="estilosPEA.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navegación superior -->
+  <header class="navbar">
+    <h1 class="logo">Administración</h1>
+    <nav>
+      <ul>
+        <li><a href="oficiales.html">Oficiales</a></li>
+        <li class="active"><a href="#">Estudiantes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
     
+    <div class="main-content">
+      
+      <!-- Sección del formulario -->
+      <section class="form-section">
+        <h3>Gestión de Estudiantes</h3>
+        <div class="form-group">
+          <label for="primerNombre">Primer Nombre *</label>
+          <input type="text" id="primerNombre" required>
+        </div>
+        <div class="form-group">
+          <label for="segundoNombre">Segundo Nombre (opcional)</label>
+          <input type="text" id="segundoNombre">
+        </div>
+        <div class="form-group">
+          <label for="primerApellido">Primer Apellido *</label>
+          <input type="text" id="primerApellido" required>
+        </div>
+        <div class="form-group">
+          <label for="segundoApellido">Segundo Apellido *</label>
+          <input type="text" id="segundoApellido" required>
+        </div>
+        <div class="form-group">
+          <label for="identificacion">Número de identificación *</label>
+          <input type="text" id="identificacion" required>
+        </div>
+        <div class="form-group">
+          <label for="fechaNacimiento">Fecha de nacimiento *</label>
+          <input type="date" id="fechaNacimiento" required>
+        </div>
+        <div class="form-group">
+          <label for="carnet">Carnet estudiantil *</label>
+          <input type="text" id="carnet" required>
+        </div>
+        <div class="form-group">
+          <label for="nacionalidad">Nacionalidad *</label>
+          <select id="nacionalidad" required>
+            <option value="">Seleccione...</option>
+            <option value="nacional">Nacional</option>
+            <option value="extranjero">Extranjero</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección (Distrito) *</label>
+          <select id="direccion" required>
+            <option value="">Seleccione...</option>
+            <option>Upala</option>
+            <option>Aguas Claras</option>
+            <option>San José de Upala</option>
+            <option>Bijagua</option>
+            <option>Delicias</option>
+            <option>Dos Ríos</option>
+            <option>Yolillal</option>
+            <option>Canalete</option>
+          </select>
+        </div>
+        <div class="footer-buttons">
+          <button class="add-button" type="submit">💾 Guardar</button>
+        </div>
+      </section>
+
+      <!-- Sección de tabla -->
+      <section class="table-section">
+        <div class="form-group">
+          <input type="text" id="buscarEstudiante" placeholder="🔍 Buscar Estudiante…">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre completo</th>
+              <th>Identificación</th>
+              <th>Fecha de nacimiento</th>
+              <th>Edad</th>
+              <th>Nacionalidad</th>
+              <th>Carnet</th>
+              <th>Distrito</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- filas dinámicas -->
+          </tbody>
+        </table>
+        <div class="footer-buttons">
+          <button class="edit-button">✏️ Editar</button>
+          <button class="delete-button">🗑️ Eliminar</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 EduAdmin • Todos los derechos reservados
+  </footer>
 </body>
 </html>
