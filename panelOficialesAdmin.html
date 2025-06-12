@@ -5,48 +5,62 @@
     <meta charset="UTF-8">
     <title>Panel de Administrador</title>
     <link rel="stylesheet" href="estilosPOA.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <header class="navbar">
+    <h1 class="logo">Administración</h1>
+    <nav>
+        <ul>
+            <li class="active"><a href="#">Oficiales</a></li>
+            <li><a href="panelEstudiantesAdmin.html">Estudiantes</a></li></li>
+        </ul>
+    </nav>
+    </header>
     <div class="container">
         <div class="main-content">
             <div class="form-section">
-                <div>
-                    <h3>Gestión de Oficiales</h3>
-                    <div class="form-group">
-                        <label>Primer nombre:</label>
-                        <input type="text" id="nombre1">
-                    </div>
-                    <div class="form-group">
-                        <label>Segundo nombre:</label>
-                        <input type="text" id="nombre2">
-                    </div>
-                    <div class="form-group">
-                        <label>Primer apellido:</label>
-                        <input type="text" id="apellido1">
-                    </div>
-                    <div class="form-group">
-                        <label>Segundo apellido:</label>
-                        <input type="text" id="apellido2">
-                    </div>
-                    <div class="form-group">
-                        <label>Número de identificación:</label>
-                        <input type="text" id="identificacion">
-                    </div>
-                    <div class="form-group">
-                        <label>Número de teléfono:</label>
-                        <input type="text" id="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label>Nombre de usuario:</label>
-                        <input type="text" id="userName">
-                    </div>
-                    <div class="form-group">
-                        <label>Contraseña:</label>
-                        <input type="password" id="contrasena">
-                    </div>
-                    <button class="clear-button" onclick="limpiarCampos()">Limpiar Campos</button>
+                <h3>Gestión de Oficiales</h3>
+                <div class="form-group">
+                    <label for="nombre1">Primer nombre</label>
+                    <input type="text" id="nombre1">
+                </div>
+                <div class="form-group">
+                    <label for="nombre2">Segundo nombre</label>
+                    <input type="text" id="nombre2">
+                </div>
+                <div class="form-group">
+                    <label for="apellido1">Primer apellido</label>
+                    <input type="text" id="apellido1">
+                </div>
+                <div class="form-group">
+                    <label for="apellido2">Segundo apellido</label>
+                    <input type="text" id="apellido2">
+                </div>
+                <div class="form-group">
+                    <label for="identificacion">Número de identificación</label>
+                    <input type="text" id="identificacion">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número de teléfono</label>
+                    <input type="text" id="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="userName">Nombre de usuario</label>
+                    <input type="text" id="userName">
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena">
+                </div>
+                <div class="footer-buttons">
+                    <button class="clear-button" onclick="limpiarCampos()">Limpiar</button>
+                    <button class="add-button">Agregar</button>
+                </div>
+                <div class="footer-buttons">
+                    <button class="edit-button">Editar</button>
+                    <button class="delete-button">Eliminar</button>
                 </div>
             </div>
 
@@ -57,37 +71,31 @@
                             <th>Nombre</th>
                             <th>ID</th>
                             <th>Teléfono</th>
-                            <th>Nombre de usuario</th>
+                            <th>Usuario</th>
                             <th>Contraseña</th>
                         </tr>
                     </thead>
                     <tbody>
-                
+                        <!-- Datos dinámicos aquí -->
                     </tbody>
                 </table>
-            </div>
-        </div>
 
-        <div class="footer-buttons">
-            <button class="add-button">Agregar Oficial</button>
-            <button class="edit-button">Editar Oficial</button>
-            <button class="delete-button">Eliminar Oficial</button>
+            </div>
         </div>
     </div>
 
+    <footer class="footer">
+        &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+    </footer>
+
     <script>
         function limpiarCampos() {
-            document.getElementById("nombre1").value = "";
-            document.getElementById("nombre2").value = "";
-            document.getElementById("apellido1").value = "";
-            document.getElementById("apellido2").value = "";
-            document.getElementById("identificacion").value = "";
-            document.getElementById("telefono").value = "";
-            document.getElementById("userName").value = "";
-            document.getElementById("contrasena").value = "";
+            const campos = ["nombre1", "nombre2", "apellido1", "apellido2", "identificacion", "telefono", "userName",
+                "contrasena"
+            ];
+            campos.forEach(id => document.getElementById(id).value = "");
         }
     </script>
-
 </body>
 
 </html>

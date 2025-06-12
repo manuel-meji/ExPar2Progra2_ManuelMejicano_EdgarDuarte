@@ -1,71 +1,43 @@
-/* --- MENÚ PRINCIPAL --- */
-.menu-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #0056d2, #009fff);
-}
-
-.menu-container {
-    background-color: #ffffff;
-    padding: 40px 60px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.menu-container button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    margin: 15px 0;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%;
-}
-
-.menu-container button:hover {
-    background-color: #0056b3;
-    transform: scale(1.03);
-}
-
-/* --- PANEL DE ADMINISTRADOR --- */
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    background-color: #f5f5f5;
-    width: 100%;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.form-section {
-    width: 30%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Contenedor general */
+.container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Contenido principal */
+.main-content {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Sección del formulario */
+.form-section {
+    flex: 1 1 30%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .form-section h3 {
-    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #0056d2;
 }
 
 .form-group {
@@ -73,80 +45,155 @@
 }
 
 .form-group label {
+    font-size: 14px;
     display: block;
     margin-bottom: 5px;
-    font-size: 14px;
+    color: #444;
 }
 
 .form-group input {
     width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #0056d2;
+    box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.1);
+}
+
+/* Botones */
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.footer-buttons button {
+    flex: 1;
+    padding: 10px 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-button {
+    background-color: #0056d2;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #0041a8;
 }
 
 .clear-button {
     background-color: #6c757d;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
+    color: white;
 }
 
+.clear-button:hover {
+    background-color: #5a6268;
+}
+
+/* Tabla */
 .table-section {
-    width: 65%;
+    flex: 1 1 65%;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-}
-
-th,
-td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
     font-size: 14px;
 }
 
-th {
+thead {
     background-color: #f0f0f0;
 }
 
-.footer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
+th, td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.footer-buttons button {
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-button {
-    background-color: #0056d2;
+tbody tr:hover {
+    background-color: #f9f9f9;
 }
 
 .edit-button {
     background-color: #ffaa00;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e69900;
 }
 
 .delete-button {
-    background-color: #971268;
+    background-color: #c1121f;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #9b0d18;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.navbar {
+  background: #0056d2;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+}
+.navbar nav li + li {
+  margin-left: 1.5rem;
+}
+.navbar a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-weight: 500;
+}
+.navbar li.active a,
+.navbar a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .form-section,
+    .table-section {
+        flex: 1 1 100%;
+    }
 }
