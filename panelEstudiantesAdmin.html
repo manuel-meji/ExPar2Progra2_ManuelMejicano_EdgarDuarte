@@ -13,72 +13,80 @@
     <h1 class="logo">Administración</h1>
     <nav>
       <ul>
-        <li><a href="oficiales.html">Oficiales</a></li>
+        <li><a href="panelOficialesAdmin.html">Oficiales</a></li>
         <li class="active"><a href="#">Estudiantes</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
-    
     <div class="main-content">
       
       <!-- Sección del formulario -->
       <section class="form-section">
         <h3>Gestión de Estudiantes</h3>
-        <div class="form-group">
-          <label for="primerNombre">Primer Nombre *</label>
-          <input type="text" id="primerNombre" required>
-        </div>
-        <div class="form-group">
-          <label for="segundoNombre">Segundo Nombre (opcional)</label>
-          <input type="text" id="segundoNombre">
-        </div>
-        <div class="form-group">
-          <label for="primerApellido">Primer Apellido *</label>
-          <input type="text" id="primerApellido" required>
-        </div>
-        <div class="form-group">
-          <label for="segundoApellido">Segundo Apellido *</label>
-          <input type="text" id="segundoApellido" required>
-        </div>
-        <div class="form-group">
-          <label for="identificacion">Número de identificación *</label>
-          <input type="text" id="identificacion" required>
-        </div>
-        <div class="form-group">
-          <label for="fechaNacimiento">Fecha de nacimiento *</label>
-          <input type="date" id="fechaNacimiento" required>
-        </div>
-        <div class="form-group">
-          <label for="carnet">Carnet estudiantil *</label>
-          <input type="text" id="carnet" required>
-        </div>
-        <div class="form-group">
-          <label for="nacionalidad">Nacionalidad *</label>
-          <select id="nacionalidad" required>
-            <option value="">Seleccione...</option>
-            <option value="nacional">Nacional</option>
-            <option value="extranjero">Extranjero</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="direccion">Dirección (Distrito) *</label>
-          <select id="direccion" required>
-            <option value="">Seleccione...</option>
-            <option>Upala</option>
-            <option>Aguas Claras</option>
-            <option>San José de Upala</option>
-            <option>Bijagua</option>
-            <option>Delicias</option>
-            <option>Dos Ríos</option>
-            <option>Yolillal</option>
-            <option>Canalete</option>
-          </select>
-        </div>
-        <div class="footer-buttons">
-          <button class="add-button" type="submit">💾 Guardar</button>
-        </div>
+        <form id="form-estudiante">
+          <div class="form-group">
+            <label for="primerNombre">Primer Nombre *</label>
+            <input type="text" id="primerNombre" required>
+          </div>
+          <div class="form-group">
+            <label for="segundoNombre">Segundo Nombre (opcional)</label>
+            <input type="text" id="segundoNombre">
+          </div>
+          <div class="form-group">
+            <label for="primerApellido">Primer Apellido *</label>
+            <input type="text" id="primerApellido" required>
+          </div>
+          <div class="form-group">
+            <label for="segundoApellido">Segundo Apellido *</label>
+            <input type="text" id="segundoApellido" required>
+          </div>
+          <div class="form-group">
+            <label for="identificacion">Número de identificación *</label>
+            <input type="text" id="identificacion" required>
+          </div>
+          <div class="form-group">
+            <label for="fechaNacimiento">Fecha de nacimiento *</label>
+            <input type="date" id="fechaNacimiento" required>
+          </div>
+          <div class="form-group">
+            <label for="carnet">Carnet estudiantil *</label>
+            <input type="text" id="carnet" required>
+          </div>
+          <div class="form-group">
+            <label for="nacionalidad">Nacionalidad *</label>
+            <select id="nacionalidad" required>
+              <option value="">Seleccione...</option>
+              <option value="nacional">Nacional</option>
+              <option value="extranjero">Extranjero</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección (Distrito) *</label>
+            <select id="direccion" required>
+              <option value="">Seleccione...</option>
+              <option>Upala</option>
+              <option>Aguas Claras</option>
+              <option>San José de Upala</option>
+              <option>Bijagua</option>
+              <option>Delicias</option>
+              <option>Dos Ríos</option>
+              <option>Yolillal</option>
+              <option>Canalete</option>
+            </select>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="footer-buttons">
+            <button class="clear-button" type="reset">🧹 Limpiar</button>
+            <button class="add-button" type="submit">💾 Guardar</button>
+          </div>
+          <div class="footer-buttons">
+            <button class="edit-button" type="button">✏️ Editar</button>
+            <button class="delete-button" type="button">🗑️ Eliminar</button>
+          </div>
+        </form>
       </section>
 
       <!-- Sección de tabla -->
@@ -102,10 +110,6 @@
             <!-- filas dinámicas -->
           </tbody>
         </table>
-        <div class="footer-buttons">
-          <button class="edit-button">✏️ Editar</button>
-          <button class="delete-button">🗑️ Eliminar</button>
-        </div>
       </section>
 
     </div>
