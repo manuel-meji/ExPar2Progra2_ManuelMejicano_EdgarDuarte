@@ -1,0 +1,239 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente y fondo general */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #0056d2;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  /* Fondo semitransparente */
+  background: rgba(255, 255, 255, 0.3);
+
+  /* Desenfoque de fondo */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Borde sutil */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  /* Transición para el efecto hide/show */
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Ajusta el padding-top del body según la altura total de la navbar */
+body {
+  padding-top: 4rem;
+}
+
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+}
+.navbar nav li + li {
+  margin-left: 1.5rem;
+}
+.navbar a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-weight: 500;
+}
+.navbar li.active a,
+.navbar a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Título de página */
+.page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0056d2;
+  font-size: 1.4rem;
+}
+
+/* Layout flex */
+.main-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Formularios */
+.form-section {
+  flex: 1 1 350px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* Grid para campos */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.form-group.full {
+  grid-column: 1 / -1;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+.form-group input,
+.form-group select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0056d2;
+  box-shadow: 0 0 0 2px rgba(0,86,210,0.2);
+}
+
+/* Acciones del formulario en grid 2×2 */
+.form-actions {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+/* Botones generales */
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-primary {
+  background-color: #0056d2;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0041a8;
+}
+.btn-secondary {
+  background-color: #ffaa00;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #0041a8;
+}
+.btn-danger {
+  background-color: #c1121f;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #9b0d18;
+}
+.btn-clear {
+  background-color: #6c757d;
+  color: #fff;
+}
+.btn-clear:hover {
+  background-color: #138496;
+}
+.btn-primary .icon,
+.btn-secondary .icon,
+.btn-danger .icon,
+.btn-clear .icon {
+  margin-right: 0.4rem;
+}
+
+/* Tabla */
+.table-section {
+  flex: 2 1 600px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow-x: auto;
+   max-height: 530px;      /* ajusta la altura que quieras mostrar */
+  overflow-y: auto;       /* scroll vertical */
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+thead {
+  background: #f0f0f0;
+}
+th, td {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+tbody tr:hover {
+  background: #fafafa;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .form-section,
+  .table-section {
+    flex: 1 1 100%;
+  }
+}

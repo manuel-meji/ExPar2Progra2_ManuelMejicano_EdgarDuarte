@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Funcionarios • Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilosPFO.css">
+</head>
+<body>
+
+  <!-- Navbar superior -->
+  <header class="navbar">
+    <h1 class="logo">Gestión de Seguridad</h1>
+    <nav>
+      <ul>
+        <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
+        <li class="active"><a href="#">Funcionarios</a></li>
+        <li><a href="panelIngresoFuncionarioOficiales.html">Ingreso Funcionario</a></li>
+        <li><a href="ingresoExterno.html">Ingreso Externo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Registra los funcionarios del CTP UPALA</h2>
+    <div class="main-content">
+
+      <!-- Formulario de registro -->
+      <section class="form-section">
+        <form id="formFuncionario">
+          <div class="form-row">
+            <div class="form-group full">
+              <label for="rolFuncionario">Seleccione el rol del funcionario: *</label>
+              <select id="rolFuncionario" required>
+                <option value="">-- seleccione --</option>
+                <option>Profesor(a)</option>
+                <option>Administrador(a)</option>
+                <option>Secretario(a)</option>
+                <option>Vigilante</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="primerNombre">Primer nombre: *</label>
+              <input type="text" id="primerNombre" required>
+            </div>
+            <div class="form-group">
+              <label for="segundoNombre">Segundo nombre:</label>
+              <input type="text" id="segundoNombre">
+            </div>
+            <div class="form-group">
+              <label for="primerApellido">Primer apellido: *</label>
+              <input type="text" id="primerApellido" required>
+            </div>
+            <div class="form-group">
+              <label for="segundoApellido">Segundo apellido: *</label>
+              <input type="text" id="segundoApellido" required>
+            </div>
+            <div class="form-group">
+              <label for="identificacion">Número de identificación: *</label>
+              <input type="text" id="identificacion" required>
+            </div>
+            <div class="form-group">
+              <label for="tipoVehiculo">Tipo de Vehículo: *</label>
+              <select id="tipoVehiculo" required>
+                <option value="">-- seleccione --</option>
+                <option>Automóvil</option>
+                <option>Motocicleta</option>
+                <option>Bicicleta</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="placa">Número de placa:</label>
+              <input type="text" id="placa">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="reset" class="btn-clear">
+              <span class="icon">🧹</span> Limpiar
+            </button>
+            <button type="submit" class="btn-primary">
+              <span class="icon">✏️</span> Registrar
+            </button>
+            <button type="button" class="btn-secondary">
+              <span class="icon">✏️</span> Editar
+            </button>
+            <button type="button" class="btn-danger">
+              <span class="icon">🗑️</span> Eliminar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Tabla de funcionarios (vacía) -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Puesto</th>
+              <th>Nombre Completo</th>
+              <th>ID</th>
+              <th>Vehículo</th>
+              <th>Placa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- registros dinámicos -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+  </footer>
+
+</body>
+</html>

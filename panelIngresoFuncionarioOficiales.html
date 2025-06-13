@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ingreso Funcionario • Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilosPIFO.css">
+</head>
+<body>
+
+  <!-- Navbar superior -->
+  <header class="navbar">
+    <h1 class="logo">Gestión de Seguridad</h1>
+    <nav>
+      <ul>
+        <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
+        <li><a href="panelFuncionariosOficales.html">Funcionarios</a></li>
+        <li class="active"><a href="#">Ingreso Funcionario</a></li>
+        <li><a href="ingresoExterno.html">Ingreso Externo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Registra los ingresos de los funcionarios</h2>
+
+    <!-- Botones de acción -->
+    <section class="form-section">
+      <div class="action-buttons">
+        <button class="btn-primary" type="button"><span class="icon">🔍</span> Buscar</button>
+        <button class="btn-warning" type="button"><span class="icon">⟳</span> Refrescar</button>
+        <button class="btn-success" type="button"><span class="icon">➕</span> Agregar</button>
+        <button class="btn-danger" type="button"><span class="icon">🗑️</span> Eliminar</button>
+      </div>
+
+      <!-- Controles de búsqueda y selección -->
+      <div class="form-inline">
+        <div class="search-group">
+          <label for="buscarFuncionario">Busca un funcionario:</label>
+          <input type="text" id="buscarFuncionario" placeholder="Nombre o ID…">
+        </div>
+        <div class="form-group-inline">
+          <label for="selCedula">Cédula del funcionario:</label>
+          <select id="selCedula">
+            <option value="">-- seleccione --</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabla de ingresos (vacía) -->
+    <section class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>ID Ingreso</th>
+            <th>Nombre Funcionario</th>
+            <th>Cédula</th>
+            <th>Puesto</th>
+            <th>Tipo de Vehículo</th>
+            <th>Placa</th>
+            <th>Fecha Ingreso</th>
+            <th>Hora ingreso</th>
+            <th>Nombre de oficial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- registros dinámicos -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+  </footer>
+
+</body>
+</html>
