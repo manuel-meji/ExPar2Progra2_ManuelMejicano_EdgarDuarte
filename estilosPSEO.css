@@ -13,34 +13,52 @@ body {
 }
 
 /* Navbar */
+/* NAVBAR estilo Apple */
 .navbar {
-  background: #0056d2;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: 600;
+  color: #000;
 }
+
 .navbar nav ul {
   list-style: none;
   display: flex;
 }
+
 .navbar nav li + li {
   margin-left: 1.5rem;
 }
+
 .navbar a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
+  color: #007aff;
   font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-.navbar li.active a,
+
+.navbar li.active a {
+  color: #0a84ff;
+}
+
 .navbar a:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #0040dd;
 }
 
 /* Contenedor general */
@@ -48,6 +66,7 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 2rem 1rem;
+  padding-top: 80px; /* espacio para el navbar fijo */
 }
 
 /* Título de la página */
@@ -71,7 +90,7 @@ body {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Agrupación inline de campos */
@@ -88,6 +107,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .search-group label,
 .form-group label {
   margin-right: 0.5rem;
@@ -95,6 +115,7 @@ body {
   color: #444;
   white-space: nowrap;
 }
+
 .search-group input,
 .form-group select {
   padding: 0.6rem 0.8rem;
@@ -102,11 +123,12 @@ body {
   border-radius: 8px;
   transition: border 0.3s ease;
 }
+
 .search-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: #0056d2;
-  box-shadow: 0 0 0 2px rgba(0,86,210,0.1);
+  box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.1);
 }
 
 /* Botón de búsqueda */
@@ -120,6 +142,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .search-button:hover {
   background: #0041a8;
 }
@@ -142,6 +165,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .approve-button:hover {
   background-color: #249f24;
 }
@@ -157,6 +181,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .delete-button:hover {
   background-color: #9b0d18;
 }
@@ -167,22 +192,27 @@ body {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
+
 thead {
   background: #f0f0f0;
 }
-th, td {
+
+th,
+td {
   padding: 0.75rem 0.5rem;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
+
 tbody tr:hover {
   background: #f9f9f9;
 }
@@ -190,8 +220,7 @@ tbody tr:hover {
 /* Footer */
 .footer {
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
+  margin: 2rem 0;
   font-size: 0.85rem;
   color: #666;
 }
@@ -202,11 +231,13 @@ tbody tr:hover {
     flex-direction: column;
     align-items: stretch;
   }
+
   .search-group,
   .form-group {
     width: 100%;
     justify-content: flex-start;
   }
+
   .actions-inline {
     justify-content: flex-end;
     width: 100%;

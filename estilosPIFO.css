@@ -5,15 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Navbar fija */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  transition: transform 0.3s ease;
-}
+
 
 /* Para que el contenido no quede oculto debajo */
 body {
@@ -28,35 +20,53 @@ body {
   color: #333;
 }
 
-/* Navbar */
+
+/* NAVBAR estilo Apple */
 .navbar {
-  background: #0056d2;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: 600;
+  color: #000;
 }
+
 .navbar nav ul {
   list-style: none;
   display: flex;
 }
+
 .navbar nav li + li {
   margin-left: 1.5rem;
 }
+
 .navbar a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
+  color: #007aff;
   font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-.navbar li.active a,
+
+.navbar li.active a {
+  color: #0a84ff;
+}
+
 .navbar a:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #0040dd;
 }
 
 /* Contenedor */

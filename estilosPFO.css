@@ -10,67 +10,56 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #f0f2f5;
   color: #333;
+  padding-top: 4rem; /* Ajusta el espacio por la navbar fija */
 }
 
-/* Navbar */
-.navbar {
-  background: #0056d2;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* NAVBAR estilo Apple */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-
-  /* Fondo semitransparente */
-  background: rgba(255, 255, 255, 0.3);
-
-  /* Desenfoque de fondo */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* Borde sutil */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-
-  /* Transición para el efecto hide/show */
-  transition: transform 0.3s ease, background 0.3s ease;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-
-/* Ajusta el padding-top del body según la altura total de la navbar */
-body {
-  padding-top: 4rem;
-}
-
 
 .navbar .logo {
   font-size: 1.5rem;
   font-weight: 600;
+  color: #000;
 }
+
 .navbar nav ul {
   list-style: none;
   display: flex;
 }
+
 .navbar nav li + li {
   margin-left: 1.5rem;
 }
+
 .navbar a {
-  color: #a0d2ff;          
+  color: #007aff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .navbar li.active a {
-  color: #20b5c0;         
+  color: #0a84ff;
 }
 
 .navbar a:hover {
-  color: #ffffff;          
+  color: #0040dd;
 }
-
 
 /* Contenedor principal */
 .container {
@@ -102,6 +91,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 /* Grid para campos */
 .form-row {
   display: grid;
@@ -141,6 +131,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
 }
+
 /* Botones generales */
 .btn-primary,
 .btn-secondary,
@@ -199,10 +190,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow-x: auto;
-   max-height: 530px;      /* ajusta la altura que quieras mostrar */
-  overflow-y: auto;       /* scroll vertical */
+  max-height: 530px;
+  overflow-y: auto;
 }
-
 
 table {
   width: 100%;
