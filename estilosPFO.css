@@ -60,15 +60,17 @@ body {
   margin-left: 1.5rem;
 }
 .navbar a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  font-weight: 500;
+  color: #a0d2ff;          
 }
-.navbar li.active a,
+
+.navbar li.active a {
+  color: #20b5c0;         
+}
+
 .navbar a:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #ffffff;          
 }
+
 
 /* Contenedor principal */
 .container {
