@@ -59,6 +59,61 @@ body {
   text-decoration: underline;
 }
 
+/* Dropdown */
+.navbar ul li.dropdown {
+  position: relative;
+}
+
+/* Asegúrate de que el navbar deje espacio para el menú desplegable */
+.navbar {
+  overflow: visible; /* Por defecto es visible, pero por si lo tienes oculto */
+}
+
+/* Ajustamos únicamente la posición del dropdown-menu */
+.navbar ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  /* left: 0;  <-- quítalo */
+  right: 0;    /* Ahora se alinea al borde derecho del <li> */
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+
+.navbar ul li .dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.navbar ul li .dropdown-menu li a {
+  color: #0056d2;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li .dropdown-menu li a:hover {
+  background: #e0ecff;
+  color: #003f91;
+}
+
+/* Mostrar dropdown al hacer hover */
+.navbar ul li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Asegúrate de que el navbar deje espacio para el menú desplegable */
+.navbar {
+  overflow: visible; /* Por defecto es visible, pero por si lo tienes oculto */
+}
+
+/* Ajustamos únicamente la posición del dropdown-menu */
+
+
 /* Contenedor */
 .container {
   max-width: 1200px;

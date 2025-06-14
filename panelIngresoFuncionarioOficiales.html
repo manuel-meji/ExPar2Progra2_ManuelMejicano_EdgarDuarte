@@ -10,17 +10,26 @@
 <body>
 
   <!-- Navbar superior -->
-  <header class="navbar">
-    <h1 class="logo">Gestión de Seguridad</h1>
-    <nav>
-      <ul>
-        <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
-        <li><a href="panelFuncionariosOficales.html">Funcionarios</a></li>
-        <li class="active"><a href="#">Ingreso Funcionario</a></li>
-        <li><a href="ingresoExterno.html">Ingreso Externo</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="navbar">
+  <h1 class="logo">Administración</h1>
+  <nav>
+    <ul>
+      <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
+      <li><a href="panelFuncionarios.html">Funcionarios</a></li>
+   
+      <li class="dropdown active">
+        <a href="#">Ingresos ▼</a>
+        <ul class="dropdown-menu">
+          <li><a href="panelIngresoFuncionario.html">Ingreso Funcionario</a></li>
+          <li><a href="panelIngresoExterno.html">Ingreso Persona Externa</a></li>
+          <li><a href="panelIngresoVehiculo.html">Ingreso Vehículo Externo</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
 
   <main class="container">
     <h2 class="page-title">Registra los ingresos de los funcionarios</h2>
