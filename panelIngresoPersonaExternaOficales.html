@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ingreso Persona Externa • Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilosPIPEO.css">
+</head>
+<body>
+
+  <!-- Navbar superior con menú desplegable Ingresos -->
+  <header class="navbar">
+    <h1 class="logo">Gestión de Seguridad</h1>
+    <nav>
+      <ul>
+        <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
+        <li><a href="panelFuncionariosOficiales.html">Funcionarios</a></li>
+        <li class="dropdown active">
+          <a href="#">Ingresos ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="panelIngresoFuncionarioOficiales.html">Ingreso Funcionario</a></li>
+            <li class="active"><a href="#">Ingreso Persona Externa</a></li>
+            <li><a href="panelIngresoVehiculoExternoOficiales.html">Ingreso Vehículo Externo</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="page-title">Registrar Ingreso de Personas Externas al CTP UPALA</h2>
+    <div class="main-content">
+
+      <!-- Formulario de registro -->
+      <section class="form-section">
+        <form id="formExterno">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="primerNombre">Nombre 1: *</label>
+              <input type="text" id="primerNombre" required>
+            </div>
+            <div class="form-group">
+              <label for="primerApellido">Apellido 1: *</label>
+              <input type="text" id="primerApellido" required>
+            </div>
+            <div class="form-group">
+              <label for="segundoNombre">Nombre 2:</label>
+              <input type="text" id="segundoNombre">
+            </div>
+            <div class="form-group">
+              <label for="segundoApellido">Apellido 2: *</label>
+              <input type="text" id="segundoApellido" required>
+            </div>
+            <div class="form-group">
+              <label for="identificacion">ID: *</label>
+              <input type="text" id="identificacion" required>
+            </div>
+            <div class="form-group full">
+              <label for="motivo">Motivo: *</label>
+              <select id="motivo" required>
+                <option value="">-- Seleccione --</option>
+                <option>Reunión con el director</option>
+                <option>Entrega de documentos</option>
+                <option>Reunión de padres de familia</option>
+                <option>Mantenimiento o reparación</option>
+                <option>Entrega de suministros</option>
+                <option>Visita guiada</option>
+                <option>Capacitación o charla</option>
+                <option>Evento cultural o deportivo</option>
+                <option>Inspección o auditoría</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-secondary">
+              <span class="icon">🔙</span> Regresar
+            </button>
+            <button type="submit" class="btn-primary">
+              <img src="https://img.icons8.com/?size=100&id=MCdDfCTzd5GC&format=png&color=FFFFFF" width="20" height="20" alt="">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Tabla de registros (vacía) -->
+      <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Ingreso</th>
+              <th>Nombre</th>
+              <th>ID</th>
+              <th>Motivo</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Nombre de oficial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Registros dinámicos -->
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+  </footer>
+
+</body>
+</html>

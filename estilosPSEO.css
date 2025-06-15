@@ -12,7 +12,6 @@ body {
   color: #333;
 }
 
-/* Navbar */
 /* NAVBAR estilo Apple */
 .navbar {
   position: fixed;
@@ -53,12 +52,54 @@ body {
   transition: color 0.2s ease;
 }
 
-.navbar li.active a {
+.navbar li.active > a {
   color: #0a84ff;
+  text-decoration: underline;
 }
 
 .navbar a:hover {
   color: #0040dd;
+}
+
+/* Dropdown */
+.navbar ul li.dropdown {
+  position: relative;
+}
+
+.navbar ul li .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.navbar ul li .dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.navbar ul li .dropdown-menu li a {
+  color: #0056d2;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li .dropdown-menu li a:hover {
+  background: #e0ecff;
+  color: #003f91;
+}
+
+/* Mostrar dropdown al hover */
+.navbar ul li.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* Contenedor general */
