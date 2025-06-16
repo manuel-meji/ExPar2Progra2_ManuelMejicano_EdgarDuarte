@@ -10,18 +10,21 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #f0f2f5;
   color: #333;
-  padding-top: 4rem; /* espacio para navbar fija */
+  padding-top: 4rem;
+  /* Espacio para navbar fija */
 }
 
 /* NAVBAR estilo Apple Glass */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -39,7 +42,8 @@ body {
   list-style: none;
   display: flex;
 }
-.navbar nav li + li {
+
+.navbar nav li+li {
   margin-left: 1.5rem;
 }
 
@@ -52,8 +56,8 @@ body {
 }
 
 /* Pestaña Ingresos activa */
-.navbar li.dropdown.active > a,
-.navbar li.dropdown .dropdown-menu li.active > a {
+.navbar li.dropdown.active>a,
+.navbar li.dropdown .dropdown-menu li.active>a {
   color: #0a84ff;
   text-decoration: underline;
 }
@@ -71,18 +75,24 @@ body {
 .navbar ul li .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%; right: 0;
-  background: rgba(255,255,255,0.75);
+  top: 100%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul li .dropdown-menu li {
   padding: 0.5rem 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .navbar ul li .dropdown-menu li a {
@@ -115,58 +125,76 @@ body {
   font-size: 1.4rem;
 }
 
-/* Layout flex */
+/* Contenedor principal ajustado para apilar formulario y tabla */
 .main-content {
   display: flex;
+  flex-direction: column;
+  /* Apila formulario arriba y tabla abajo */
   gap: 2rem;
-  flex-wrap: wrap;
+  /* Espaciado entre formulario y tabla */
+  min-height: 0;
 }
 
 /* Formulario */
 .form-section {
-  flex: 1 1 350px;
+  flex: 0 0 auto;
   background: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  /* Reducido de 1rem a 0.75rem */
 }
-.form-group.full {
-  grid-column: 1 / -1;
+
+.form-row.two-columns {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  /* Reducido de 1rem a 0.75rem */
+  align-items: end;
 }
+
 .form-group {
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 .form-group label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-bottom: 0.3rem;
   color: #444;
 }
+
 .form-group input,
 .form-group select {
   padding: 0.6rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 0.9rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
   border-color: #0056d2;
-  box-shadow: 0 0 0 2px rgba(0,86,210,0.2);
+  box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.2);
 }
 
 /* Acciones */
 .form-actions {
-  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* Dos columnas para los botones */
   gap: 0.75rem;
+  grid-column: 3 / 5;
+  /* Los botones ocupan las últimas dos columnas */
+  align-self: end;
+  /* Asegura que los botones estén alineados con los inputs */
 }
 
 /* Botones */
@@ -177,25 +205,30 @@ body {
   justify-content: center;
   padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ff2d55; /* Rojo iOS para eliminar */
+  color: #fff;
 }
+
 .btn-primary {
-  background-color: #0056d2;
+  background-color: #007aff;
   color: #fff;
 }
+
 .btn-primary:hover {
-  background-color: #0041a8;
+  background-color: #005bb5;
 }
-.btn-secondary {
-  background-color: #6c757d;
-  color: #fff;
-}
+
+
 .btn-secondary:hover {
-  background-color: #138496;
+  background-color: #cc1f44;
 }
+
 .btn-primary .icon,
 .btn-secondary .icon {
   margin-right: 0.4rem;
@@ -203,11 +236,11 @@ body {
 
 /* Tabla */
 .table-section {
-  flex: 2 1 600px;
+  flex: 1 1 600px;
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
   max-height: 530px;
   overflow-y: auto;
@@ -218,14 +251,18 @@ table {
   border-collapse: collapse;
   font-size: 0.9rem;
 }
+
 thead {
   background: #f0f0f0;
 }
-th, td {
+
+th,
+td {
   padding: 0.75rem 0.5rem;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
+
 tbody tr:hover {
   background: #fafafa;
 }
@@ -240,10 +277,20 @@ tbody tr:hover {
 
 /* Responsive */
 @media (max-width: 800px) {
-  .main-content {
-    flex-direction: column;
+
+  .form-row,
+  .form-row.two-columns {
+    grid-template-columns: 1fr;
+    /* Una columna en pantallas pequeñas */
   }
-  .form-section, .table-section {
+
+  .form-actions {
+    grid-column: 1 / 2;
+    /* Los botones ocupan una sola columna en pantallas pequeñas */
+  }
+
+  .form-section,
+  .table-section {
     flex: 1 1 100%;
   }
 }

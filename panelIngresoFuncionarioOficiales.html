@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ingreso Funcionario • Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilosPIFO.css">
 </head>
+
 <body>
 
   <!-- Navbar superior -->
-<header class="navbar">
-  <h1 class="logo">Gestión de Seguridad</h1>
-  <nav>
-    <ul>
-      <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
-      <li><a href="panelFuncionariosOficiales.html">Funcionarios</a></li>
-   
-      <li class="dropdown active">
-        <a href="#">Ingresos ▼</a>
-        <ul class="dropdown-menu">
-          <li><a href="panelIngresoFuncionarioOficiales.html">Ingreso Funcionario</a></li>
-          <li><a href="panelIngresoPersonaExternaOficales.html">Ingreso Persona Externa</a></li>
-          <li><a href="panelIngresoVehiculoExternoOficiales.html">Ingreso Vehículo Externo</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-
+  <header class="navbar">
+    <h1 class="logo">Gestión de Seguridad</h1>
+    <nav>
+      <ul>
+        <li><a href="panelSalidaEstudiantesOficiales.html">Salida de Estudiantes</a></li>
+        <li><a href="panelFuncionariosOficiales.html">Funcionarios</a></li>
+        <li class="dropdown active">
+          <a href="#">Ingresos ▼</a>
+          <ul class="dropdown-menu">
+            <li class="selected"><a href="panelIngresoFuncionarioOficiales.html">Ingreso Funcionario</a></li>
+            <li><a href="panelIngresoPersonaExternaOficales.html">Ingreso Persona Externa</a></li>
+            <li><a href="panelIngresoVehiculoExternoOficiales.html">Ingreso Vehículo Externo</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="container">
     <h2 class="page-title">Registra los ingresos de los funcionarios</h2>
 
-    <!-- Botones de acción -->
+    <!-- Formulario de registro -->
     <section class="form-section">
-      <div class="action-buttons">
-        <button class="btn-primary" type="button"><span class="icon">🔍</span> Buscar</button>
-        <button class="btn-warning" type="button"><span class="icon">⟳</span> Refrescar</button>
-        <button class="btn-success" type="button"><span class="icon">➕</span> Agregar</button>
-        <button class="btn-danger" type="button"><span class="icon">🗑️</span> Eliminar</button>
-      </div>
-
-      <!-- Controles de búsqueda y selección -->
-      <div class="form-inline">
-        <div class="search-group">
-          <label for="buscarFuncionario">Busca un funcionario:</label>
-          <input type="text" id="buscarFuncionario" placeholder="Nombre o ID…">
+      <form id="formFuncionario">
+        <!-- Fila única con todos los elementos -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buscarFuncionario">Busca un funcionario:</label>
+            <div class="search-group">
+              <input type="text" id="buscarFuncionario" placeholder="Nombre o ID…">
+              <button class="btn-primary" type="button">
+                <img src="https://img.icons8.com/?size=100&id=132&format=png&color=FFFFFF" alt="Buscar"
+                  style="width:20px; vertical-align:middle;">
+                Buscar</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="selCedula">Cédula del funcionario:</label>
+            <select id="selCedula">
+              <option value="">-- seleccione --</option>
+            </select>
+          </div>
+          <div class="form-actions">
+            <button class="btn-success" type="button">
+              <img src="https://img.icons8.com/?size=100&id=FFdft2aGmPoF&format=png&color=FFFFFF"
+                style="width:20px; vertical-align:middle;" alt="Aprobar">
+              Aprobar ingreso</button>
+            <button class="btn-danger" type="button">
+              <img src="https://img.icons8.com/?size=100&id=68138&format=png&color=FFFFFF"
+                style="width:20px; vertical-align:middle;" alt="Eliminar">
+              Eliminar registro</button>
+          </div>
         </div>
-        <div class="form-group-inline">
-          <label for="selCedula">Cédula del funcionario:</label>
-          <select id="selCedula">
-            <option value="">-- seleccione --</option>
-          </select>
-        </div>
-      </div>
+      </form>
     </section>
 
     <!-- Tabla de ingresos (vacía) -->
@@ -83,8 +93,9 @@
   </main>
 
   <footer class="footer">
-    &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+    © 2025 Seguridad y Tecnología • Todos los derechos reservados
   </footer>
 
 </body>
+
 </html>

@@ -78,10 +78,15 @@ body {
   min-width: 200px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 1000;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
 .navbar ul li .dropdown-menu li {
   padding: 0.5rem 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .navbar ul li .dropdown-menu li a {
@@ -107,7 +112,7 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 2rem 1rem;
-  padding-top: 80px; /* espacio para el navbar fijo */
+  padding-top: 80px;
 }
 
 /* Título de la página */
@@ -139,7 +144,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Grupos de entrada */
@@ -162,6 +168,7 @@ body {
   padding: 0.6rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  height: 40px;
   transition: border 0.3s ease;
 }
 
@@ -176,28 +183,32 @@ body {
 .search-button {
   margin-left: 0.5rem;
   padding: 0.6rem 1rem;
-  background: #0056d2;
+  height: 40px;
+  background: #007aff;
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .search-button:hover {
-  background: #0041a8;
+  background: #005bb5;
 }
 
 /* Grupo de acciones (botones) */
 .actions-inline {
-  margin-left: auto;
   display: flex;
   gap: 0.5rem;
+  justify-content: center; /* Centra horizontalmente los botones */
+  width: 100%; /* Ocupa todo el ancho para centrar correctamente */
 }
 
 /* Botón Aprobar */
 .approve-button {
-  background-color: #2cae2c;
+  background-color: #34c759;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -208,12 +219,12 @@ body {
 }
 
 .approve-button:hover {
-  background-color: #249f24;
+  background-color: #2da14e;
 }
 
 /* Botón Eliminar */
 .delete-button {
-  background-color: #c1121f;
+  background-color: #ff2d55;
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -224,7 +235,7 @@ body {
 }
 
 .delete-button:hover {
-  background-color: #9b0d18;
+  background-color: #cc1f44;
 }
 
 /* Sección de tabla */
@@ -280,7 +291,7 @@ tbody tr:hover {
   }
 
   .actions-inline {
-    justify-content: flex-end;
+    justify-content: center; /* Centra los botones en móvil */
     width: 100%;
   }
 }

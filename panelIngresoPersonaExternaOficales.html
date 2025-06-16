@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ingreso Persona Externa • Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilosPIPEO.css">
@@ -35,28 +35,32 @@
       <!-- Formulario de registro -->
       <section class="form-section">
         <form id="formExterno">
+          <!-- Primera fila: 4 campos en 4 columnas -->
           <div class="form-row">
             <div class="form-group">
-              <label for="primerNombre">Nombre 1: *</label>
+              <label for="primerNombre">Primer nombre: *</label>
               <input type="text" id="primerNombre" required>
             </div>
             <div class="form-group">
-              <label for="primerApellido">Apellido 1: *</label>
-              <input type="text" id="primerApellido" required>
-            </div>
-            <div class="form-group">
-              <label for="segundoNombre">Nombre 2:</label>
+              <label for="segundoNombre">Segundo nombre:</label>
               <input type="text" id="segundoNombre">
             </div>
             <div class="form-group">
-              <label for="segundoApellido">Apellido 2: *</label>
-              <input type="text" id="segundoApellido" required>
+              <label for="primerApellido">Primer apellido: *</label>
+              <input type="text" id="primerApellido" required>
             </div>
             <div class="form-group">
-              <label for="identificacion">ID: *</label>
+              <label for="segundoApellido">Segundo apellido: *</label>
+              <input type="text" id="segundoApellido" required>
+            </div>
+          </div>
+          <!-- Segunda fila: ID, Motivo, Eliminar, Guardar -->
+          <div class="form-row two-columns">
+            <div class="form-group">
+              <label for="identificacion">Identificación: *</label>
               <input type="text" id="identificacion" required>
             </div>
-            <div class="form-group full">
+            <div class="form-group">
               <label for="motivo">Motivo: *</label>
               <select id="motivo" required>
                 <option value="">-- Seleccione --</option>
@@ -72,16 +76,17 @@
                 <option>Otro</option>
               </select>
             </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn-secondary">
-              <span class="icon">🔙</span> Regresar
-            </button>
-            <button type="submit" class="btn-primary">
-              <img src="https://img.icons8.com/?size=100&id=MCdDfCTzd5GC&format=png&color=FFFFFF" width="20" height="20" alt="">
-              Guardar
-            </button>
+            <div class="form-actions">
+              <button type="button" class="btn-secondary">
+                <img src="https://img.icons8.com/?size=100&id=68138&format=png&color=FFFFFF"
+                style="width:20px; vertical-align:middle;" alt="Eliminar">
+                Eliminar
+              </button>
+              <button type="submit" class="btn-primary">
+                <img src="https://img.icons8.com/?size=100&id=MCdDfCTzd5GC&format=png&color=FFFFFF" width="20" height="20" alt="Guardar">
+                Guardar
+              </button>
+            </div>
           </div>
         </form>
       </section>
@@ -110,7 +115,7 @@
   </main>
 
   <footer class="footer">
-    &copy; 2025 Seguridad y Tecnología • Todos los derechos reservados
+    © 2025 Seguridad y Tecnología • Todos los derechos reservados
   </footer>
 
 </body>

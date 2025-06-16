@@ -5,23 +5,15 @@
   box-sizing: border-box;
 }
 
-
-
-/* Para que el contenido no quede oculto debajo */
-body {
-  padding-top: 4rem; /* ajusta según la altura real de tu navbar */
-}
-
-
-/* Fuente y fondo global */
+/* Fuente y fondo general */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f0f2f5;
   color: #333;
+  padding-top: 4rem; /* Espacio para navbar fija */
 }
 
-
-/* NAVBAR estilo Apple */
+/* NAVBAR estilo Apple Glass */
 .navbar {
   position: fixed;
   top: 0;
@@ -31,7 +23,7 @@ body {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -74,29 +66,27 @@ body {
   position: relative;
 }
 
-/* Asegúrate de que el navbar deje espacio para el menú desplegable */
-.navbar {
-  overflow: visible; /* Por defecto es visible, pero por si lo tienes oculto */
-}
-
-/* Ajustamos únicamente la posición del dropdown-menu */
 .navbar ul li .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  /* left: 0;  <-- quítalo */
-  right: 0;    /* Ahora se alinea al borde derecho del <li> */
+  right: 0;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 12px;
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
-
 
 .navbar ul li .dropdown-menu li {
   padding: 0.5rem 1rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .navbar ul li .dropdown-menu li a {
@@ -112,24 +102,24 @@ body {
   color: #003f91;
 }
 
+.navbar ul li .dropdown-menu li.selected > a {
+  color: #0a84ff;
+  text-decoration: underline;
+}
+
 /* Mostrar dropdown al hacer hover */
 .navbar ul li.dropdown:hover .dropdown-menu {
   display: block;
 }
-/* Asegúrate de que el navbar deje espacio para el menú desplegable */
-.navbar {
-  overflow: visible; /* Por defecto es visible, pero por si lo tienes oculto */
-}
-
-/* Ajustamos únicamente la posición del dropdown-menu */
-
 
 /* Contenedor */
 .container {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
+
+/* Título */
 .page-title {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -137,136 +127,161 @@ body {
   font-size: 1.4rem;
 }
 
-/* Sección de controles */
+/* Formulario */
 .form-section {
+  flex: 0 0 auto;
   background: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
 
-/* Botones principales alineados */
-.action-buttons {
+.form-row {
   display: flex;
-  justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.action-buttons button {
-  flex: 1;
-  padding: 0.6rem 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.action-buttons .icon {
-  margin-right: 0.4rem;
+  justify-content: space-between; /* Distribuye los botones ocupando todo el ancho */
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* Form-inline para inputs */
-.form-inline {
+.form-group {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
+  flex-direction: column;
 }
-.search-group,
-.form-group-inline {
+
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.search-group {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-.search-group label,
-.form-group-inline label {
-  font-size: 0.95rem;
-  color: #444;
-  white-space: nowrap;
-}
-.search-group input,
-.form-group-inline select {
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.search-group input:focus,
-.form-group-inline select:focus {
-  outline: none;
-  border-color: #0056d2;
-  box-shadow: 0 0 0 2px rgba(0,86,210,0.1);
+  width: 100%;
 }
 
-/* Botones */
+.search-group input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  flex: 1;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-group input:focus {
+  outline: none;
+  border-color: #0056d2;
+  box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.2);
+}
+
+.form-group select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #0056d2;
+  box-shadow: 0 0 0 2px rgba(0, 86, 210, 0.2);
+}
+
+/* Acciones */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+/* Botones al estilo iOS */
 .btn-primary,
 .btn-success,
-.btn-warning,
 .btn-danger {
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 1rem;
+  justify-content: center;
+  padding: 0.75rem 2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: 160px;
 }
+
 .btn-primary {
-  background-color: #0056d2;
+  background-color: #007aff;
   color: #fff;
 }
+
 .btn-primary:hover {
-  background-color: #0041a8;
+  background-color: #005bb5;
 }
+
 .btn-success {
-  background-color: #2cae2c;
+  background-color: #34c759;
   color: #fff;
 }
+
 .btn-success:hover {
-  background-color: #249f24;
+  background-color: #2da14e;
 }
-.btn-warning {
-  background-color: #f0ad4e;
-  color: #fff;
-}
-.btn-warning:hover {
-  background-color: #ec971f;
-}
+
 .btn-danger {
-  background-color: #c1121f;
+  background-color: #ff2d55;
   color: #fff;
 }
+
 .btn-danger:hover {
-  background-color: #9b0d18;
+  background-color: #cc1f44;
 }
+
 .btn-primary .icon,
 .btn-success .icon,
-.btn-warning .icon,
 .btn-danger .icon {
   margin-right: 0.4rem;
 }
 
 /* Tabla */
 .table-section {
+  flex: 1 1 600px;
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
+  max-height: 530px;
+  overflow-y: auto;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
+
 thead {
   background: #f0f0f0;
 }
-th, td {
+
+th,
+td {
   padding: 0.75rem 0.5rem;
   text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
+
 tbody tr:hover {
   background: #fafafa;
 }
@@ -280,12 +295,16 @@ tbody tr:hover {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .action-buttons {
-    flex-direction: column;
+@media (max-width: 800px) {
+  .form-row {
+    grid-template-columns: 1fr;
   }
-  .form-inline {
+  .form-actions {
     flex-direction: column;
-    gap: 1rem;
+    width: 100%;
+  }
+  .form-section,
+  .table-section {
+    flex: 1 1 100%;
   }
 }
